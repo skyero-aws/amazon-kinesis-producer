@@ -17,9 +17,13 @@
     <url>https://aws.amazon.com/kinesis</url>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>central</id>
+            <url>https://central.sonatype.com/api/v1/publisher/deployments</url>
+        </snapshotRepository>
         <repository>
             <id>central</id>
-            <url>https://central.sonatype.com/api/v1/publisher/deployments/upload</url>
+            <url>https://central.sonatype.com/api/v1/publisher/deployments</url>
         </repository>
     </distributionManagement>
 
@@ -239,7 +243,7 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <autoPublish>false</autoPublish>
+                            <tokenAuth>true</tokenAuth>
                         </configuration>
                     </plugin>
                 </plugins>
